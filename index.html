@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stickmin</title>
-    <script src="ruffle.js"></script> <!-- Ensure this points to ruffle.js -->
-    <script src="core.ruffle.js"></script> <!-- Ensure this points to core.ruffle.js -->
+    <title>Play Henry Stickmin: Breaking the Bank</title>
+    <script src="ruffle.js"></script>
+    <script src="core.ruffle.js"></script>
     <style>
-        /* Make sure the body and html fill the full screen */
         html, body {
             height: 100%;
             margin: 0;
             overflow: hidden;
         }
 
-        /* Ensure the div that holds the player is also full screen */
         #flash-game {
             width: 100vw;
             height: 100vh;
@@ -25,22 +23,27 @@
     <div id="flash-game"></div>
 
     <script>
-        // Initialize Ruffle Player
         const ruffle = window.RufflePlayer.newest();
         const flashPlayer = ruffle.createPlayer();
-
+        
         // Append the flash player to the div
         document.getElementById("flash-game").appendChild(flashPlayer);
+
+        // Log when the SWF is loaded
+        flashPlayer.onload = function() {
+            console.log("SWF loaded successfully!");
+            flashPlayer.setVolume(0);  // Ensure sound is muted after loading
+            flashPlayer.style.width = '100vw';
+            flashPlayer.style.height = '100vh';
+        };
 
         // Load the SWF file from an external URL
         flashPlayer.load("https://file.garden/Z0Xlvk83ozp28Cac/Files/Henry%20Stickmin%20-%20Infiltrating%20the%20Airship.swf");
 
-        // Mute the sound
-        flashPlayer.muted = true;
-
-        // Make the player fullscreen by resizing
-        flashPlayer.style.width = '100vw';
-        flashPlayer.style.height = '100vh';
+        // Additional debugging in case of error
+        flashPlayer.onerror = function(error) {
+            console.error("Error loading SWF:", error);
+        };
     </script>
 </body>
 </html>
