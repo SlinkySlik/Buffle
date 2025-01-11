@@ -1,11 +1,27 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Play Henry Stickmin: Infiltrating the Airship</title>
+    <!-- Include Ruffle.js from the "ruffle" folder -->
+    <script src="ruffle/ruffle.js"></script>
 </head>
 <body style="margin: 0; padding: 0; overflow: hidden;">
-    <iframe src="https://www.newgrounds.com/portal/view/1234567" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <!-- This div will hold the Flash game -->
+    <div id="flash-game" style="width: 100vw; height: 100vh;"></div>
+
+    <script>
+        // Initialize Ruffle Player
+        const ruffle = window.RufflePlayer.newest();
+        const flashPlayer = ruffle.createPlayer();
+        
+        // Append the flash player to the div
+        document.getElementById("flash-game").appendChild(flashPlayer);
+        
+        // Load the SWF file from the main directory
+        flashPlayer.load("Henry Stickmin - Breaking the Bank.swf");
+    </script>
 </body>
 </html>
