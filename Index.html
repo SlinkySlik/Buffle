@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Flash Game with Ruffle</title>
-    <script src="https://unpkg.com/ruffle-web@latest/ruffle.js"></script> <!-- Direct Ruffle CDN -->
+    <title>Play Henry Stickmin: Infiltrating the Airship</title>
+    <script src="https://unpkg.com/ruffle-web@latest/ruffle.js"></script> <!-- Ruffle CDN -->
 </head>
 <body>
-    <h1>Play Flash Game</h1>
+    <h1>Play Henry Stickmin: Infiltrating the Airship</h1>
     <div id="flash-game-container">
         <!-- Flash game embed -->
         <div id="flash-game" style="width: 800px; height: 600px;"></div>
@@ -19,8 +19,8 @@
         const flashPlayer = ruffle.createPlayer();
         document.getElementById("flash-game").appendChild(flashPlayer);
 
-        // Load your SWF file from the main directory
-        flashPlayer.load("your-game.swf");  // Just the SWF file name as it's in the main directory
+        // Load your SWF file from the provided external URL
+        flashPlayer.load("https://file.garden/Z0Xlvk83ozp28Cac/Files/Henry%20Stickmin%20-%20Infiltrating%20the%20Airship.swf");
     </script>
 </body>
 </html>
