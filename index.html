@@ -6,9 +6,23 @@
     <title>Stickmin</title>
     <script src="ruffle.js"></script> <!-- Ensure this points to ruffle.js -->
     <script src="core.ruffle.js"></script> <!-- Ensure this points to core.ruffle.js -->
+    <style>
+        /* Make sure the body and html fill the full screen */
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Ensure the div that holds the player is also full screen */
+        #flash-game {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
 </head>
-<body style="margin: 0; padding: 0; overflow: hidden;">
-    <div id="flash-game" style="width: 100vw; height: 100vh;"></div>
+<body>
+    <div id="flash-game"></div>
 
     <script>
         // Initialize Ruffle Player
@@ -21,8 +35,12 @@
         // Load the SWF file from an external URL
         flashPlayer.load("https://file.garden/Z0Xlvk83ozp28Cac/Files/Henry%20Stickmin%20-%20Infiltrating%20the%20Airship.swf");
 
-        // Mute the volume of the flash game
-        flashPlayer.muted = true; // This will mute the sound
+        // Mute the sound
+        flashPlayer.muted = true;
+
+        // Make the player fullscreen by resizing
+        flashPlayer.style.width = '100vw';
+        flashPlayer.style.height = '100vh';
     </script>
 </body>
 </html>
