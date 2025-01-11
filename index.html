@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Henry Stickmin: Breaking the Bank</title>
-    <script src="ruffle.js"></script> <!-- Reference to ruffle.js in the main directory -->
+    <title>Stickmin</title>
+    <script src="ruffle.js"></script> <!-- Ensure this points to ruffle.js -->
+    <script src="core.ruffle.js"></script> <!-- Ensure this points to core.ruffle.js -->
 </head>
 <body style="margin: 0; padding: 0; overflow: hidden;">
     <div id="flash-game" style="width: 100vw; height: 100vh;"></div>
@@ -17,8 +18,11 @@
         // Append the flash player to the div
         document.getElementById("flash-game").appendChild(flashPlayer);
 
-        // Load the SWF file
-        flashPlayer.load("Henry Stickmin - Breaking the Bank.swf");
+        // Load the SWF file from an external URL
+        flashPlayer.load("https://file.garden/Z0Xlvk83ozp28Cac/Files/Henry%20Stickmin%20-%20Infiltrating%20the%20Airship.swf");
+
+        // Mute the volume of the flash game
+        flashPlayer.setVolume(0.4); // This will mute the sound
     </script>
 </body>
 </html>
