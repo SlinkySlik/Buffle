@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Henry Stickmin</title>
-    <script src="https://unpkg.com/ruffle-web@latest/ruffle.js"></script> <!-- Ruffle CDN -->
-</head>
-<body>
-    <h1>Play Henry Stickmin: Breaking the Bank</h1>
-    <div id="flash-game-container">
-        <!-- Flash game embed -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Play Henry Stickmin: Breaking the Bank</title>
+        <script src="https://unpkg.com/ruffle-web@latest/ruffle.js"></script>
+    </head>
+    <body>
+        <h1>Play Henry Stickmin: Breaking the Bank</h1>
         <div id="flash-game" style="width: 800px; height: 600px;"></div>
-    </div>
 
-    <script>
-        // Initialize Ruffle
-        const ruffle = window.RufflePlayer.newest();
-        const flashPlayer = ruffle.createPlayer();
-        document.getElementById("flash-game").appendChild(flashPlayer);
-
-        // Load the SWF file from the main directory (GitHub Pages root)
-        flashPlayer.load("Henry Stickmin - Breaking the Bank.swf");
-    </script>
-</body>
+        <script>
+            const ruffle = window.RufflePlayer.newest();
+            const flashPlayer = ruffle.createPlayer();
+            document.getElementById("flash-game").appendChild(flashPlayer);
+            flashPlayer.load("Henry%20Stickmin%20-%20Breaking%20the%20Bank.swf");
+        </script>
+    </body>
 </html>
